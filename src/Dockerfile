@@ -52,5 +52,5 @@ RUN apt-get install gdb ros-melodic*joint-trajectory-controller* -y
 COPY robots/ /opt/ros/melodic/share/franka_description/robots/
 RUN echo "source /root/ws_moveit/devel/setup.bash" >> ~/.bashrc
 COPY entrypoint.sh entrypoint.sh
-ENTRYPOINT ["tail", "-f", "/dev/null"]
-#ENTRYPOINT [ "./entrypoint.sh"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT [ "./entrypoint.sh"]
