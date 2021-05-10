@@ -35,6 +35,7 @@ RUN wstool remove  moveit_tutorials
 RUN wstool update -t .
 RUN rosdep install -y --from-paths . --ignore-src --rosdistro melodic
 WORKDIR /root/ws_moveit
+COPY chomp_planner.cpp /root/ws_moveit/src/moveit/moveit_planners/chomp/chomp_motion_planner/src/chomp_planner.cpp
 RUN catkin config --extend /opt/ros/melodic --cmake-args -DCMAKE_BUILD_TYPE=Release
 RUN catkin build
 RUN source devel/setup.bash
