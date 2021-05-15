@@ -31,7 +31,7 @@ RUN apt-get install wget -y
 RUN wstool init .
 RUN wstool merge -t . https://raw.githubusercontent.com/ros-planning/moveit/master/moveit.rosinstall
 COPY ./my_project ./my_project
-RUN wstool remove  moveit_tutorials
+#RUN wstool remove  moveit_tutorials
 RUN wstool update -t .
 RUN rosdep install -y --from-paths . --ignore-src --rosdistro melodic
 WORKDIR /root/ws_moveit
