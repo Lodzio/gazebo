@@ -1,0 +1,7 @@
+set(myrobot_usage_SETUP_PY_SETUP_MODULE "distutils.core")
+set(myrobot_usage_SETUP_PY_VERSION "0.0.0")
+set(myrobot_usage_SETUP_PY_SCRIPTS "")
+set(myrobot_usage_SETUP_PY_PACKAGES "myrobot_usage")
+set(myrobot_usage_SETUP_PY_PACKAGE_DIRS "src/myrobot_usage")
+set(myrobot_usage_SETUP_PY_MODULES "")
+set(myrobot_usage_SETUP_PY_MODULE_DIRS "")

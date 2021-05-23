@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ubuntu/aaa_ws/install/setup.sh

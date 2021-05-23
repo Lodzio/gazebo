@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/aaa_ws/install
+
+Name: myrobot_moveit_try2
+Description: Description of myrobot_moveit_try2
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

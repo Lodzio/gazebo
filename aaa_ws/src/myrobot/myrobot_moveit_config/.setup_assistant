@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: myrobot_description
+    relative_path: urdf/myrobot_macro.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/myrobot.srdf
+  CONFIG:
+    author_name: aaa
+    author_email: aaa@wp.pl
+    generated_timestamp: 1619376374
