@@ -52,5 +52,7 @@ COPY robots/ /opt/ros/noetic/share/franka_description/robots/
 RUN echo "source /root/ws_moveit/devel/setup.bash" >> ~/.bashrc
 COPY entrypoint.sh entrypoint.sh
 COPY my_world.world /usr/share/gazebo-11/worlds/my_world.world
+COPY aaa_ws/src/myrobot/myrobot_usage src/myrobot_usage
+RUN catkin build
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT [ "./entrypoint.sh"]
