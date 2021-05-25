@@ -51,6 +51,6 @@ RUN apt-get install gdb ros-noetic*joint-trajectory-controller* -y
 COPY robots/ /opt/ros/noetic/share/franka_description/robots/
 RUN echo "source /root/ws_moveit/devel/setup.bash" >> ~/.bashrc
 COPY entrypoint.sh entrypoint.sh
-COPY my_world.world /root/my_world.world
+COPY my_world.world /usr/share/gazebo-11/worlds/my_world.world
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT [ "./entrypoint.sh"]
