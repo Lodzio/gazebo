@@ -69,8 +69,8 @@ if __name__=='__main__':
 
   robot = moveit_commander.RobotCommander()
   scene = moveit_commander.PlanningSceneInterface()
-  group = moveit_commander.MoveGroupCommander("manipulator")
-  gripper = moveit_commander.MoveGroupCommander("gripper")
+  group = moveit_commander.MoveGroupCommander("panda_arm")
+  gripper = moveit_commander.MoveGroupCommander("hand")
   display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path', moveit_msgs.msg.DisplayTrajectory, queue_size=20)
 
   rospy.sleep(7)
