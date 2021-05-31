@@ -97,18 +97,18 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   // transform from `"panda_link8"` to the palm of the end effector.
   grasps[0].grasp_pose.header.frame_id = "panda_link0";
   tf2::Quaternion orientation;
-  orientation.setRPY(-tau / 4, -tau / 8, -tau / 4);
+  orientation.setRPY(-tau / 4, -tau / 8, 0);
   grasps[0].grasp_pose.pose.orientation = tf2::toMsg(orientation);
-  grasps[0].grasp_pose.pose.position.x = 0.415;
-  grasps[0].grasp_pose.pose.position.y = 0;
-  grasps[0].grasp_pose.pose.position.z = 0.5;
+  grasps[0].grasp_pose.pose.position.x = 0.074163;
+  grasps[0].grasp_pose.pose.position.y = 0.629239;
+  grasps[0].grasp_pose.pose.position.z = 0.669239;
 
   // Setting pre-grasp approach
   // ++++++++++++++++++++++++++
   /* Defined with respect to frame_id */
   grasps[0].pre_grasp_approach.direction.header.frame_id = "panda_link0";
   /* Direction is set as positive x axis */
-  grasps[0].pre_grasp_approach.direction.vector.x = 1.0;
+  grasps[0].pre_grasp_approach.direction.vector.y = 1.0;
   grasps[0].pre_grasp_approach.min_distance = 0.095;
   grasps[0].pre_grasp_approach.desired_distance = 0.115;
 
@@ -155,13 +155,13 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   // +++++++++++++++++++++++++++
   place_location[0].place_pose.header.frame_id = "panda_link0";
   tf2::Quaternion orientation;
-  orientation.setRPY(0, 0, tau / 4);  // A quarter turn about the z-axis
+  orientation.setRPY(0, 0, 0);  // A quarter turn about the z-axis
   place_location[0].place_pose.pose.orientation = tf2::toMsg(orientation);
 
   /* For place location, we set the value to the exact location of the center of the object. */
-  place_location[0].place_pose.pose.position.x = 0;
-  place_location[0].place_pose.pose.position.y = 0.5;
-  place_location[0].place_pose.pose.position.z = 0.5;
+  place_location[0].place_pose.pose.position.x = 0.074163;
+  place_location[0].place_pose.pose.position.y = 0.629239;
+  place_location[0].place_pose.pose.position.z = 0.135274;
 
   // Setting pre-place approach
   // ++++++++++++++++++++++++++

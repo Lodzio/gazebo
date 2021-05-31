@@ -12,7 +12,9 @@ services:
 
   gzserver:
     container_name: gzserver
-    build: .
+    build: 
+      network: host
+      context: .
     runtime: nvidia
 #    depends_on:
 #      - driver
