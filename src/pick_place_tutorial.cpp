@@ -100,8 +100,8 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   orientation.setRPY(-tau / 4, -tau / 8, 0);
   grasps[0].grasp_pose.pose.orientation = tf2::toMsg(orientation);
   grasps[0].grasp_pose.pose.position.x = 0.074163;
-  grasps[0].grasp_pose.pose.position.y = 0.629239;
-  grasps[0].grasp_pose.pose.position.z = 0.669239;
+  grasps[0].grasp_pose.pose.position.y = 0.529239;
+  grasps[0].grasp_pose.pose.position.z = 0.589239;
 
   // Setting pre-grasp approach
   // ++++++++++++++++++++++++++
@@ -118,8 +118,8 @@ void pick(moveit::planning_interface::MoveGroupInterface& move_group)
   grasps[0].post_grasp_retreat.direction.header.frame_id = "panda_link0";
   /* Direction is set as positive z axis */
   grasps[0].post_grasp_retreat.direction.vector.z = 1.0;
-  grasps[0].post_grasp_retreat.min_distance = 0.1;
-  grasps[0].post_grasp_retreat.desired_distance = 0.25;
+  grasps[0].post_grasp_retreat.min_distance = 0.05;
+  grasps[0].post_grasp_retreat.desired_distance = 0.01;
 
   // Setting posture of eef before grasp
   // +++++++++++++++++++++++++++++++++++
@@ -168,7 +168,7 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   /* Defined with respect to frame_id */
   place_location[0].pre_place_approach.direction.header.frame_id = "panda_link0";
   /* Direction is set as negative z axis */
-  place_location[0].pre_place_approach.direction.vector.z = -1.0;
+  place_location[0].pre_place_approach.direction.vector.z = -0.1;
   place_location[0].pre_place_approach.min_distance = 0.095;
   place_location[0].pre_place_approach.desired_distance = 0.115;
 
@@ -177,9 +177,9 @@ void place(moveit::planning_interface::MoveGroupInterface& group)
   /* Defined with respect to frame_id */
   place_location[0].post_place_retreat.direction.header.frame_id = "panda_link0";
   /* Direction is set as negative y axis */
-  place_location[0].post_place_retreat.direction.vector.y = -1.0;
-  place_location[0].post_place_retreat.min_distance = 0.1;
-  place_location[0].post_place_retreat.desired_distance = 0.25;
+  place_location[0].post_place_retreat.direction.vector.y = -1;
+  place_location[0].post_place_retreat.min_distance = 0.01;
+  place_location[0].post_place_retreat.desired_distance = 0.025;
 
   // Setting posture of eef after placing object
   // +++++++++++++++++++++++++++++++++++++++++++
@@ -219,7 +219,7 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& pla
   collision_objects[0].primitive_poses.resize(1);
   collision_objects[0].primitive_poses[0].position.x = 0.094129;
   collision_objects[0].primitive_poses[0].position.y = 0.76235;
-  collision_objects[0].primitive_poses[0].position.z = 0.515274;
+  collision_objects[0].primitive_poses[0].position.z = 0.415274;
   collision_objects[0].primitive_poses[0].orientation.w = 1.0;
   // END_SUB_TUTORIAL
 
@@ -242,7 +242,7 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& pla
   collision_objects[1].primitive_poses.resize(1);
   collision_objects[1].primitive_poses[0].position.x = 0.094129;
   collision_objects[1].primitive_poses[0].position.y = 0.76235;
-  collision_objects[1].primitive_poses[0].position.z = 0.115274;
+  collision_objects[1].primitive_poses[0].position.z = 0.015274;
   collision_objects[1].primitive_poses[0].orientation.w = 1.0;
   // END_SUB_TUTORIAL
 
@@ -265,7 +265,7 @@ void addCollisionObjects(moveit::planning_interface::PlanningSceneInterface& pla
   collision_objects[2].primitive_poses.resize(1);
   collision_objects[2].primitive_poses[0].position.x = 0.074163;
   collision_objects[2].primitive_poses[0].position.y = 0.669239;
-  collision_objects[2].primitive_poses[0].position.z = 0.669239;
+  collision_objects[2].primitive_poses[0].position.z = 0.569239;
   collision_objects[2].primitive_poses[0].orientation.w = 1.0;
   // END_SUB_TUTORIAL
 
